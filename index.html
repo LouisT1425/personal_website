@@ -7,16 +7,14 @@
 <meta name="description" data-i18n="meta.description" content="Portfolio et CV de Louis Thin, jeune data engineer en recherche d'opportunités.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-<div class="progress-bar" id="progressBar"></div>
-
 <header class="site-header" id="siteHeader">
   <nav class="nav container">
-    <a href="#home" class="logo"></a>
+    <a href="#home" class="logo">Louis Thin</a>
 
     <button class="nav-toggle" id="navToggle" aria-label="Basculer la navigation" data-i18n-aria="a11y.navToggle" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -63,9 +61,6 @@
         <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="4.5" width="19" height="15" rx="2.2"/><path d="m3.5 6 8.5 7 8.5-7"/></svg>
       </a>
     </div>
-    <a href="#projects" class="scroll-cue" aria-label="Voir les projets" data-i18n-aria="a11y.scrollNext">
-      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 4v16M5 13l7 7 7-7"/></svg>
-    </a>
   </section>
 
   <!-- PROJECTS -->
@@ -76,9 +71,7 @@
     <div class="project-grid">
 
       <article class="project-card reveal">
-        <div class="project-thumb thumb-1" aria-hidden="true">
-          <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 4v14"/></svg>
-        </div>
+        <img class="project-thumb" src="assets/pictures/atmosfer_logo.jpg" alt="" aria-hidden="true">
         <div class="project-body">
           <h3>ATMOSFER</h3>
           <p data-i18n="project1.desc">Application web permettant de suivre les émissions mondiales de CO2, avec une granularité par année, par pays et par secteur d'activité.</p>
@@ -184,7 +177,7 @@
     <h2 class="reveal section-title" data-i18n="music.title">Musique</h2>
     <p class="reveal music-intro" data-i18n="music.intro">Le reste du temps, j'écris et j'enregistre sous le nom Louis Thin.</p>
     <div class="reveal music-embed">
-      <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/artist/7L0fp9WNTj8WCSdg3jXWl4?utm_source=generator&si=d74e03dcffb44053" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/artist/7L0fp9WNTj8WCSdg3jXWl4?utm_source=generator&theme=0&si=2d9f9dd1fdb547bc" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </div>
   </section>
 
@@ -209,7 +202,7 @@
 
 <footer class="site-footer">
   <div class="container footer-inner">
-    <p>&copy; <span id="year"></span> Louis Thin — <span data-i18n="footer.text">Fait main en HTML, CSS et JS.</span></p>
+    <p>&copy; <span id="year"></span> Louis Thin — <span data-i18n="footer.text">Fait en HTML, CSS et JS.</span></p>
     <a href="#home" class="back-top" data-i18n="footer.backTop">Retour en haut ↑</a>
   </div>
 </footer>

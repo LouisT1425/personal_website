@@ -37,7 +37,12 @@ const translations = {
     "job1.title": "Data Engineer — Stage de fin d'études",
     "job1.company": "Safran Aircraft Engines",
     "job1.dates": "Février 2026 - Août 2026",
-    "job1.desc": "Construction de pipelines ETL (sources NAS et API REST : fichiers .csv, .txt, .xlsx, bases SQLite) en Python, avec nettoyage et transformation des données. Réalisation de dashboards Power BI (modèle en étoile, mesures DAX) à destination du management, utilisés lors des comités de pilotage (COPIL). Fine-tuning d'un modèle XLM-RoBERTa (recherche par grille, validation croisée k-fold) pour la classification NLP de documentation technique. Résultat : amélioration d'un KPI majeur de 33 % à 50 %.",
+    "job1.desc": [
+      "Construction de pipelines ETL (sources NAS et API REST : fichiers .csv, .txt, .xlsx, bases SQLite) en Python, avec nettoyage et transformation des données.",
+      "Réalisation de dashboards Power BI (modèle en étoile, mesures DAX) à destination du management, utilisés lors des comités de pilotage (COPIL).",
+      "Fine-tuning d'un modèle XLM-RoBERTa (recherche par grille, validation croisée k-fold) pour la classification NLP de documentation technique.",
+      "Résultat : amélioration d'un KPI majeur de 33 % à 50 %.",
+    ],
     "job2.title": "Stage NLP / Machine Learning",
     "job2.company": "Institut Agro Dijon",
     "job2.dates": "Octobre 2025 - Janvier 2026",
@@ -94,7 +99,12 @@ const translations = {
     "job1.title": "Data Engineer — Final-Year Internship",
     "job1.company": "Safran Aircraft Engines",
     "job1.dates": "February 2026 - August 2026",
-    "job1.desc": "Built ETL pipelines (NAS shares and REST APIs: .csv, .txt, .xlsx files, SQLite databases) in Python, including data cleaning and transformation. Built Power BI dashboards (star schema, DAX measures) for management, used in steering committee meetings. Fine-tuned an XLM-RoBERTa model (grid search, k-fold cross-validation) for NLP classification of technical documentation. Result: a key KPI improved from 33% to 50%.",
+    "job1.desc": [
+      "Built ETL pipelines (NAS shares and REST APIs: .csv, .txt, .xlsx files, SQLite databases) in Python, including data cleaning and transformation.",
+      "Built Power BI dashboards (star schema, DAX measures) for management, used in steering committee meetings.",
+      "Fine-tuned an XLM-RoBERTa model (grid search, k-fold cross-validation) for NLP classification of technical documentation.",
+      "Result: a key KPI improved from 33% to 50%.",
+    ],
     "job2.title": "NLP / Machine Learning Internship",
     "job2.company": "Institut Agro Dijon",
     "job2.dates": "October 2025 - January 2026",
@@ -128,6 +138,14 @@ function applyLanguage(lang) {
     if (value === undefined) return;
     if (el.tagName === "META") {
       el.setAttribute("content", value);
+    } else if (Array.isArray(value)) {
+      el.replaceChildren(
+        ...value.map((item) => {
+          const li = document.createElement("li");
+          li.textContent = item;
+          return li;
+        })
+      );
     } else {
       el.textContent = value;
     }
@@ -186,35 +204,6 @@ navLinks.querySelectorAll("a").forEach((link) => {
     navToggle.setAttribute("aria-expanded", "false");
   });
 });
-
-// ---------- Scroll progress bar + header shadow ----------
-const progressBar = document.getElementById("progressBar");
-const siteHeader = document.getElementById("siteHeader");
-
-function onScroll() {
-  const scrollTop = window.scrollY;
-  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-  const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-  progressBar.style.width = pct + "%";
-  siteHeader.classList.toggle("scrolled", scrollTop > 8);
-}
-document.addEventListener("scroll", onScroll, { passive: true });
-onScroll();
-
-// ---------- Reveal on scroll ----------
-const revealEls = document.querySelectorAll(".reveal");
-const revealObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("in-view");
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
-);
-revealEls.forEach((el) => revealObserver.observe(el));
 
 // ---------- Active nav link on scroll ----------
 const sections = document.querySelectorAll("main section[id]");
