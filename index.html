@@ -7,7 +7,7 @@
 <meta name="description" content="Portfolio and resume of Louis T., software engineer.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -25,6 +25,7 @@
     <ul class="nav-links" id="navLinks">
       <li><a href="#home" class="nav-link active" data-nav>Home</a></li>
       <li><a href="#projects" class="nav-link" data-nav>Projects</a></li>
+      <li><a href="#music" class="nav-link" data-nav>Music</a></li>
       <li><a href="#resume" class="nav-link" data-nav>Resume</a></li>
       <li><a href="#contact" class="nav-link" data-nav>Contact</a></li>
     </ul>
@@ -40,13 +41,11 @@
 
   <!-- HERO -->
   <section id="home" class="hero container">
-    <p class="reveal eyebrow">Hi, I'm</p>
+    <p class="reveal eyebrow">Bonjour, moi c'est</p>
     <h1 class="reveal">Louis T.</h1>
-    <h2 class="reveal hero-role">Software Engineer &amp; Builder</h2>
+    <h2 class="reveal hero-role">Data Engineer</h2>
     <p class="reveal hero-text">
-      I design and build clean, reliable software — from small tools to full products.
-      This is a running record of what I've made and where I've worked.
-      <em>(Placeholder bio — swap this for your own in <code>index.html</code>.)</em>
+      Je suis un jeune diplômé d'école d'ingénieur informatique à la recherche d'opportunités en tant que data engineer, pour débuter dés que possible
     </p>
     <div class="reveal hero-actions">
       <a href="#projects" class="btn btn-primary">View Projects</a>
@@ -80,10 +79,11 @@
           <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 4v14"/></svg>
         </div>
         <div class="project-body">
-          <h3>Project One</h3>
-          <p>A short, punchy description of what this project does and the problem it solves. Replace with your real project.</p>
+          <h3>ATMOSFER</h3>
+          <p>Web app permettant de tracker les émissions de CO2 mondiales.
+            Granularité à l'année, au pays et au secteur d'activité.</p>
           <ul class="tags">
-            <li>React</li><li>Node.js</li><li>PostgreSQL</li>
+            <li>Python</li><li>PostgreSQL</li><li>dbt</li><li>Airflow</li>
           </ul>
           <div class="project-links">
             <a href="#" target="_blank" rel="noopener">Live Demo →</a>
@@ -146,18 +146,29 @@
     </div>
   </section>
 
+  <!-- MUSIC -->
+  <section id="music" class="music container">
+    <p class="reveal section-eyebrow">Off Screen</p>
+    <h2 class="reveal section-title">Music</h2>
+    <div class="reveal music-embed">
+      <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/artist/7L0fp9WNTj8WCSdg3jXWl4?utm_source=generator&si=d74e03dcffb44053" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
+  </section>
+
   <!-- RESUME -->
   <section id="resume" class="resume container">
     <p class="reveal section-eyebrow">Background</p>
     <h2 class="reveal section-title">Résumé</h2>
 
-    <div class="resume-grid">
-      <div class="resume-side reveal">
+    <div class="resume-col">
+      <div class="reveal resume-summary">
         <h3>Summary</h3>
         <p>Placeholder summary — two or three sentences on your experience, focus areas, and what kind of work you're looking for next.</p>
+      </div>
 
+      <div class="reveal resume-summary">
         <h3>Skills</h3>
-        <ul class="skill-list">
+        <ul class="skill-tags">
           <li>JavaScript / TypeScript</li>
           <li>React &amp; Node.js</li>
           <li>Python</li>
@@ -165,9 +176,9 @@
           <li>Cloud (AWS / GCP)</li>
           <li>Git &amp; CI/CD</li>
         </ul>
-
-        <a href="assets/resume/resume.pdf" class="btn btn-primary" download>Download Résumé (PDF)</a>
       </div>
+
+      <a href="assets/resume/resume.pdf" class="btn btn-primary reveal" download>Download Résumé (PDF)</a>
 
       <div class="resume-timeline">
         <h3 class="reveal">Experience</h3>
@@ -175,10 +186,8 @@
         <div class="timeline-item reveal">
           <div class="timeline-dot"></div>
           <div class="timeline-content">
-            <div class="timeline-head">
-              <h4>Job Title</h4>
-              <span>2024 — Present</span>
-            </div>
+            <h4>Job Title</h4>
+            <span class="timeline-date">2024 — Present</span>
             <p class="timeline-org">Company Name</p>
             <p>Brief description of responsibilities and impact. Quantify results where possible.</p>
           </div>
@@ -187,10 +196,8 @@
         <div class="timeline-item reveal">
           <div class="timeline-dot"></div>
           <div class="timeline-content">
-            <div class="timeline-head">
-              <h4>Job Title</h4>
-              <span>2022 — 2024</span>
-            </div>
+            <h4>Job Title</h4>
+            <span class="timeline-date">2022 — 2024</span>
             <p class="timeline-org">Company Name</p>
             <p>Brief description of responsibilities and impact. Quantify results where possible.</p>
           </div>
@@ -201,10 +208,8 @@
         <div class="timeline-item reveal">
           <div class="timeline-dot"></div>
           <div class="timeline-content">
-            <div class="timeline-head">
-              <h4>Degree, Field of Study</h4>
-              <span>20XX — 20XX</span>
-            </div>
+            <h4>Degree, Field of Study</h4>
+            <span class="timeline-date">20XX — 20XX</span>
             <p class="timeline-org">University Name</p>
           </div>
         </div>
