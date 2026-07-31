@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title data-i18n="meta.title">Louis Thin — Data Engineer</title>
-<meta name="description" data-i18n="meta.description" content="Portfolio et CV de Louis Thin, jeune data engineer en recherche d'opportunités.">
+<meta name="description" data-i18n="meta.description" content="Mon portfolio et mon CV.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -14,7 +14,7 @@
 
 <header class="site-header" id="siteHeader">
   <nav class="nav container">
-    <a href="#home" class="logo">Louis Thin</a>
+    <a href="#home" class="logo"></a>
 
     <button class="nav-toggle" id="navToggle" aria-label="Basculer la navigation" data-i18n-aria="a11y.navToggle" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -57,7 +57,7 @@
       <a href="https://www.linkedin.com/in/louis-thin/" target="_blank" rel="noopener" aria-label="LinkedIn">
         <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.15 1.45-2.15 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>
       </a>
-      <a href="mailto:thin.louis1425@hotmail.com" aria-label="Email">
+      <a href="#" class="copy-email" data-email="thin.louis1425@hotmail.com" aria-label="Copier l'adresse e-mail" data-i18n-aria="a11y.copyEmailLabel" title="Cliquer pour copier dans le presse-papier" data-i18n-title="a11y.copyEmailTitle">
         <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="4.5" width="19" height="15" rx="2.2"/><path d="m3.5 6 8.5 7 8.5-7"/></svg>
       </a>
     </div>
@@ -186,7 +186,11 @@
     <p class="reveal section-eyebrow" data-i18n="contact.eyebrow">Contact</p>
     <h2 class="reveal section-title" data-i18n="contact.title">On en discute ?</h2>
     <p class="reveal contact-text" data-i18n="contact.text">Une opportunité de data engineer, une question, ou simplement l'envie de dire bonjour : ma boîte mail est ouverte.</p>
-    <a href="mailto:thin.louis1425@hotmail.com" class="reveal contact-email">thin.louis1425@hotmail.com</a>
+    <a href="#" class="reveal contact-email copy-email"
+   data-email="thin.louis1425@hotmail.com"
+   title="Cliquer pour copier dans le presse-papier" data-i18n-title="a11y.copyEmailTitle">
+    thin.louis1425@hotmail.com
+    </a>
 
     <div class="reveal hero-socials contact-socials">
       <a href="https://github.com/LouisT1425" target="_blank" rel="noopener" aria-label="GitHub">
@@ -206,6 +210,8 @@
     <a href="#home" class="back-top" data-i18n="footer.backTop">Retour en haut ↑</a>
   </div>
 </footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script src="assets/js/main.js"></script>
 </body>

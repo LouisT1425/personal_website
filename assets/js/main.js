@@ -11,6 +11,10 @@ const translations = {
     "a11y.navToggle": "Basculer la navigation",
     "a11y.themeToggle": "Basculer le mode sombre",
     "a11y.scrollNext": "Voir les projets",
+    "a11y.copyEmailLabel": "Copier l'adresse e-mail",
+    "a11y.copyEmailTitle": "Cliquer pour copier dans le presse-papier",
+    "toast.emailCopied": "Email copié dans le presse-papier !",
+    "toast.emailCopyError": "Impossible de copier l'adresse e-mail.",
     "hero.eyebrow": "Bonjour, moi c'est",
     "hero.bio": "Jeune ingénieur fraîchement diplômé, spécialisé en intelligence artificielle et génie logiciel. Je recherche une opportunité de data engineer, avec une prise de poste envisagée en septembre 2026.",
     "hero.cta1": "Voir mes projets",
@@ -73,6 +77,10 @@ const translations = {
     "a11y.navToggle": "Toggle navigation",
     "a11y.themeToggle": "Toggle dark mode",
     "a11y.scrollNext": "Scroll to projects",
+    "a11y.copyEmailLabel": "Copy email address",
+    "a11y.copyEmailTitle": "Click to copy to clipboard",
+    "toast.emailCopied": "Email copied to clipboard!",
+    "toast.emailCopyError": "Couldn't copy the email address.",
     "hero.eyebrow": "Hi, I'm",
     "hero.bio": "Recent engineering graduate specialized in artificial intelligence and software engineering. I'm looking for a data engineer role, with a target start date around September 2026.",
     "hero.cta1": "View my projects",
@@ -127,6 +135,35 @@ const translations = {
 };
 
 const langToggle = document.getElementById("langToggle");
+const EMAIL = "thin.louis1425@hotmail.com";
+const toast = document.getElementById("toast");
+
+function currentLang() {
+  return document.documentElement.getAttribute("lang") === "en" ? "en" : "fr";
+}
+
+document.querySelectorAll(".copy-email").forEach(link => {
+    link.addEventListener("click", async e => {
+        e.preventDefault();
+
+        try {
+            await navigator.clipboard.writeText(
+                link.dataset.email || EMAIL
+            );
+
+            toast.textContent = translations[currentLang()]["toast.emailCopied"];
+            toast.classList.add("show");
+
+            clearTimeout(toast._timeout);
+            toast._timeout = setTimeout(() => {
+                toast.classList.remove("show");
+            }, 2200);
+
+        } catch {
+            alert(translations[currentLang()]["toast.emailCopyError"]);
+        }
+    });
+});
 
 function applyLanguage(lang) {
   const dict = translations[lang];
@@ -157,6 +194,12 @@ function applyLanguage(lang) {
     if (value !== undefined) el.setAttribute("aria-label", value);
   });
 
+  document.querySelectorAll("[data-i18n-title]").forEach((el) => {
+    const key = el.getAttribute("data-i18n-title");
+    const value = dict[key];
+    if (value !== undefined) el.title = value;
+  });
+
   const isFr = lang === "fr";
   langToggle.textContent = isFr ? "EN" : "FR";
   langToggle.setAttribute("aria-label", isFr ? "Switch to English" : "Passer en français");
@@ -168,9 +211,15 @@ const storedLang = localStorage.getItem("lang");
 const initialLang = storedLang === "en" ? "en" : "fr";
 applyLanguage(initialLang);
 
+const LANG_FADE_MS = 160;
+
 langToggle.addEventListener("click", () => {
-  const current = document.documentElement.getAttribute("lang") === "en" ? "en" : "fr";
-  applyLanguage(current === "fr" ? "en" : "fr");
+  const next = currentLang() === "fr" ? "en" : "fr";
+  document.body.classList.add("lang-fade");
+  window.setTimeout(() => {
+    applyLanguage(next);
+    document.body.classList.remove("lang-fade");
+  }, LANG_FADE_MS);
 });
 
 // ---------- Theme toggle ----------
@@ -179,12 +228,21 @@ const themeToggle = document.getElementById("themeToggle");
 const storedTheme = localStorage.getItem("theme");
 if (storedTheme) root.setAttribute("data-theme", storedTheme);
 
+const THEME_FADE_MS = 320;
+
 themeToggle.addEventListener("click", () => {
   const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
   const current = root.getAttribute("data-theme") || (prefersDark ? "dark" : "light");
   const next = current === "dark" ? "light" : "dark";
+
+  root.classList.add("theme-transition");
   root.setAttribute("data-theme", next);
   localStorage.setItem("theme", next);
+
+  clearTimeout(root._themeFadeTimeout);
+  root._themeFadeTimeout = window.setTimeout(() => {
+    root.classList.remove("theme-transition");
+  }, THEME_FADE_MS);
 });
 
 // ---------- Mobile nav ----------
