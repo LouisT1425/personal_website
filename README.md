@@ -15,17 +15,18 @@ assets/resume/resume.pdf  Placeholder résumé served by the "Download" buttons
 
 All visible text is driven by `data-i18n="key"` attributes in `index.html`, resolved against the `translations` object at the top of `assets/js/main.js` (a `fr` and an `en` dict, keyed the same way). The `EN`/`FR` button in the header (next to the dark-mode toggle) swaps the whole page and persists the choice in `localStorage`.
 
-To edit copy: change the string in **both** `translations.fr[key]` and `translations.en[key]` — the HTML itself only holds the default (French) text shown before JS runs, so it must also be kept in sync if you touch it there.
+**Important:** `applyLanguage()` runs on every page load and overwrites the text of every `data-i18n` element with whatever is in the dict — so if you edit copy directly in `index.html` without also updating `translations.fr[key]` in `main.js`, your change will render for a split second and then get silently reverted to the stale dict value. Always change the string in **both** places (the HTML default text and `translations.fr[key]` / `translations.en[key]`).
 
 ## Customize
 
 - **Name, bio, socials:** hero section in `index.html` + matching `hero.*` keys in `main.js`.
-- **Projects:** `ATMOSFER` is real; the other three cards are placeholders (`[Nom du projet]` / `project2/3/4.*` keys) — swap title, description, tags, and links, in both language dicts.
-- **Résumé:** two-column layout — `.resume-aside` (about + skills) on the left, `.resume-main` (experience/education timeline) on the right. Bracketed placeholders (`[Nom de l'entreprise]`, etc.) mark what to fill in; corresponding keys are `resume.*`, `job1.*`, `edu1.*`.
+- **Projects:** duplicate a `.project-card` block in `#projects` for more cards; the grid auto-centers whether there's 1 or several.
+- **Résumé:** two-column layout — `.resume-aside` (about + skills) on the left, `.resume-main` (experience/education timeline) on the right. Each entry has matching `jobN.*` / `edu1.*` keys (including `jobN.dates`, so month names switch with the language too).
 - **Résumé file:** replace `assets/resume/resume.pdf` with your real exported PDF.
 - **Music:** the `#music` section embeds a Spotify artist profile via iframe — swap the `src` URL for a different artist/playlist/track.
 - **Accent color:** `--accent` / `--accent-soft` in `assets/css/style.css` (separate light/dark values).
 - **Contact:** update the `mailto:` and social `href`s in the `#contact` section.
+- **Buttons:** kept intentionally minimal — one solid `.btn.btn-primary` per section at most, everything else is a `.btn-link` (underlined text) or a plain arrow link like the project card links.
 
 ## Run locally
 
