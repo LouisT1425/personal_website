@@ -1,3 +1,19 @@
+/* ---------- Dyslexia-friendly typeface ---------- */
+@font-face {
+  font-family: "OpenDyslexic";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("https://cdn.jsdelivr.net/npm/@fontsource/opendyslexic@5.0.0/files/opendyslexic-latin-400-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "OpenDyslexic";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("https://cdn.jsdelivr.net/npm/@fontsource/opendyslexic@5.0.0/files/opendyslexic-latin-700-normal.woff2") format("woff2");
+}
+
 /* ---------- Reset & base ---------- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; font-size: 93.75%; } /* ~15px base */
@@ -55,6 +71,57 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
   }
 }
 
+/* ---------- Dyslexia-friendly mode ---------- */
+html[data-dyslexic="true"] {
+  --font-head: "OpenDyslexic", Verdana, Tahoma, sans-serif;
+  --font-body: "OpenDyslexic", Verdana, Tahoma, sans-serif;
+}
+html[data-dyslexic="true"] body {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  letter-spacing: 0.02em;
+  word-spacing: 0.16em;
+}
+html[data-dyslexic="true"] h1,
+html[data-dyslexic="true"] h2,
+html[data-dyslexic="true"] h3,
+html[data-dyslexic="true"] h4 {
+  letter-spacing: 0.01em;
+}
+html[data-dyslexic="true"] .eyebrow,
+html[data-dyslexic="true"] .section-eyebrow {
+  text-transform: none;
+  letter-spacing: 0.02em;
+}
+html[data-dyslexic="true"] .hero-text,
+html[data-dyslexic="true"] .project-body p,
+html[data-dyslexic="true"] .contact-text,
+html[data-dyslexic="true"] .music-intro,
+html[data-dyslexic="true"] .timeline-content p,
+html[data-dyslexic="true"] .resume-aside p {
+  text-align: left;
+}
+
+.dyslexia-toggle {
+  display: grid;
+  place-items: center;
+  min-width: 34px;
+  height: 34px;
+  padding: 0 0.55rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+.dyslexia-toggle:hover { border-color: var(--accent); color: var(--accent); }
+.dyslexia-toggle.active {
+  background: var(--accent-gold);
+  border-color: var(--accent-gold);
+  color: var(--on-gold);
+}
+
 .toast {
   position: fixed;
   left: 50%;
@@ -78,11 +145,12 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
   transform: translate(-50%, 0);
 }
 
-/* ---------- Theme / language switch fades ---------- */
-html.theme-transition,
-html.theme-transition * {
+/* ---------- Theme / dyslexia / language switch fades ---------- */
+html.ui-transition,
+html.ui-transition * {
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease,
-    fill 0.3s ease, box-shadow 0.3s ease !important;
+    fill 0.3s ease, box-shadow 0.3s ease, letter-spacing 0.3s ease,
+    word-spacing 0.3s ease, line-height 0.3s ease, font-size 0.3s ease !important;
 }
 
 body {

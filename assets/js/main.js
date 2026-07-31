@@ -13,6 +13,8 @@ const translations = {
     "a11y.scrollNext": "Voir les projets",
     "a11y.copyEmailLabel": "Copier l'adresse e-mail",
     "a11y.copyEmailTitle": "Cliquer pour copier dans le presse-papier",
+    "a11y.dyslexiaToggle": "Basculer le mode dyslexie",
+    "a11y.dyslexiaToggleTitle": "Activer un affichage plus lisible (police et espacement adaptés)",
     "toast.emailCopied": "Email copié dans le presse-papier !",
     "toast.emailCopyError": "Impossible de copier l'adresse e-mail.",
     "hero.eyebrow": "Bonjour, moi c'est",
@@ -79,6 +81,8 @@ const translations = {
     "a11y.scrollNext": "Scroll to projects",
     "a11y.copyEmailLabel": "Copy email address",
     "a11y.copyEmailTitle": "Click to copy to clipboard",
+    "a11y.dyslexiaToggle": "Toggle dyslexia-friendly mode",
+    "a11y.dyslexiaToggleTitle": "Turn on a more readable layout (adapted font and spacing)",
     "toast.emailCopied": "Email copied to clipboard!",
     "toast.emailCopyError": "Couldn't copy the email address.",
     "hero.eyebrow": "Hi, I'm",
@@ -222,27 +226,57 @@ langToggle.addEventListener("click", () => {
   }, LANG_FADE_MS);
 });
 
-// ---------- Theme toggle ----------
+// ---------- UI transition helper (theme + dyslexia mode) ----------
 const root = document.documentElement;
+const UI_FADE_MS = 320;
+
+function withUiTransition(mutate) {
+  root.classList.add("ui-transition");
+  mutate();
+  clearTimeout(root._uiFadeTimeout);
+  root._uiFadeTimeout = window.setTimeout(() => {
+    root.classList.remove("ui-transition");
+  }, UI_FADE_MS);
+}
+
+// ---------- Theme toggle ----------
 const themeToggle = document.getElementById("themeToggle");
 const storedTheme = localStorage.getItem("theme");
 if (storedTheme) root.setAttribute("data-theme", storedTheme);
-
-const THEME_FADE_MS = 320;
 
 themeToggle.addEventListener("click", () => {
   const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
   const current = root.getAttribute("data-theme") || (prefersDark ? "dark" : "light");
   const next = current === "dark" ? "light" : "dark";
 
-  root.classList.add("theme-transition");
-  root.setAttribute("data-theme", next);
-  localStorage.setItem("theme", next);
+  withUiTransition(() => {
+    root.setAttribute("data-theme", next);
+    localStorage.setItem("theme", next);
+  });
+});
 
-  clearTimeout(root._themeFadeTimeout);
-  root._themeFadeTimeout = window.setTimeout(() => {
-    root.classList.remove("theme-transition");
-  }, THEME_FADE_MS);
+// ---------- Dyslexia-friendly mode ----------
+const dyslexiaToggle = document.getElementById("dyslexiaToggle");
+const storedDyslexia = localStorage.getItem("dyslexia") === "true";
+if (storedDyslexia) {
+  root.setAttribute("data-dyslexic", "true");
+  dyslexiaToggle.classList.add("active");
+  dyslexiaToggle.setAttribute("aria-pressed", "true");
+}
+
+dyslexiaToggle.addEventListener("click", () => {
+  const next = root.getAttribute("data-dyslexic") !== "true";
+
+  withUiTransition(() => {
+    if (next) {
+      root.setAttribute("data-dyslexic", "true");
+    } else {
+      root.removeAttribute("data-dyslexic");
+    }
+    dyslexiaToggle.classList.toggle("active", next);
+    dyslexiaToggle.setAttribute("aria-pressed", String(next));
+    localStorage.setItem("dyslexia", String(next));
+  });
 });
 
 // ---------- Mobile nav ----------
