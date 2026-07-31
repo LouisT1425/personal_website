@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Louis T. — Software Engineer</title>
+<meta name="description" content="Portfolio and resume of Louis T., software engineer.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<header class="site-header" id="siteHeader">
+  <nav class="nav container">
+    <a href="#home" class="logo">LT<span>.</span></a>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" class="nav-link active" data-nav>Home</a></li>
+      <li><a href="#projects" class="nav-link" data-nav>Projects</a></li>
+      <li><a href="#resume" class="nav-link" data-nav>Resume</a></li>
+      <li><a href="#contact" class="nav-link" data-nav>Contact</a></li>
+    </ul>
+
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M4.6 4.6l1.7 1.7M17.7 17.7l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.6 19.4l1.7-1.7M17.7 6.3l1.7-1.7"/></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.6 6.6 0 0 0 10.5 10.5z"/></svg>
+    </button>
+  </nav>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section id="home" class="hero container">
+    <p class="reveal eyebrow">Hi, I'm</p>
+    <h1 class="reveal">Louis T.</h1>
+    <h2 class="reveal hero-role">Software Engineer &amp; Builder</h2>
+    <p class="reveal hero-text">
+      I design and build clean, reliable software — from small tools to full products.
+      This is a running record of what I've made and where I've worked.
+      <em>(Placeholder bio — swap this for your own in <code>index.html</code>.)</em>
+    </p>
+    <div class="reveal hero-actions">
+      <a href="#projects" class="btn btn-primary">View Projects</a>
+      <a href="assets/resume/resume.pdf" class="btn btn-ghost" download>Download Résumé</a>
+    </div>
+    <div class="reveal hero-socials">
+      <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.93c.58.1.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.87-1.54-3.87-1.54-.53-1.33-1.29-1.69-1.29-1.69-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.68 0-1.25.45-2.28 1.19-3.08-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.76.12 3.05.74.8 1.18 1.83 1.18 3.08 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.07.78 2.16 0 1.56-.02 2.82-.02 3.2 0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+      </a>
+      <a href="https://linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.15 1.45-2.15 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>
+      </a>
+      <a href="mailto:louis.thin.contact@gmail.com" aria-label="Email">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="4.5" width="19" height="15" rx="2.2"/><path d="m3.5 6 8.5 7 8.5-7"/></svg>
+      </a>
+    </div>
+    <a href="#projects" class="scroll-cue" aria-label="Scroll to projects">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 4v16M5 13l7 7 7-7"/></svg>
+    </a>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="projects container">
+    <p class="reveal section-eyebrow">Selected Work</p>
+    <h2 class="reveal section-title">Projects</h2>
+
+    <div class="project-grid">
+
+      <article class="project-card reveal">
+        <div class="project-thumb thumb-1" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 4v14"/></svg>
+        </div>
+        <div class="project-body">
+          <h3>Project One</h3>
+          <p>A short, punchy description of what this project does and the problem it solves. Replace with your real project.</p>
+          <ul class="tags">
+            <li>React</li><li>Node.js</li><li>PostgreSQL</li>
+          </ul>
+          <div class="project-links">
+            <a href="#" target="_blank" rel="noopener">Live Demo →</a>
+            <a href="#" target="_blank" rel="noopener">Source →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card reveal">
+        <div class="project-thumb thumb-2" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z"/></svg>
+        </div>
+        <div class="project-body">
+          <h3>Project Two</h3>
+          <p>A short, punchy description of what this project does and the problem it solves. Replace with your real project.</p>
+          <ul class="tags">
+            <li>Python</li><li>FastAPI</li><li>Docker</li>
+          </ul>
+          <div class="project-links">
+            <a href="#" target="_blank" rel="noopener">Live Demo →</a>
+            <a href="#" target="_blank" rel="noopener">Source →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card reveal">
+        <div class="project-thumb thumb-3" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+        </div>
+        <div class="project-body">
+          <h3>Project Three</h3>
+          <p>A short, punchy description of what this project does and the problem it solves. Replace with your real project.</p>
+          <ul class="tags">
+            <li>TypeScript</li><li>Next.js</li><li>AWS</li>
+          </ul>
+          <div class="project-links">
+            <a href="#" target="_blank" rel="noopener">Live Demo →</a>
+            <a href="#" target="_blank" rel="noopener">Source →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card reveal">
+        <div class="project-thumb thumb-4" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19V5a2 2 0 0 1 2-2h9l5 5v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"/><path d="M14 3v5h5"/></svg>
+        </div>
+        <div class="project-body">
+          <h3>Project Four</h3>
+          <p>A short, punchy description of what this project does and the problem it solves. Replace with your real project.</p>
+          <ul class="tags">
+            <li>Go</li><li>Redis</li><li>gRPC</li>
+          </ul>
+          <div class="project-links">
+            <a href="#" target="_blank" rel="noopener">Live Demo →</a>
+            <a href="#" target="_blank" rel="noopener">Source →</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- RESUME -->
+  <section id="resume" class="resume container">
+    <p class="reveal section-eyebrow">Background</p>
+    <h2 class="reveal section-title">Résumé</h2>
+
+    <div class="resume-grid">
+      <div class="resume-side reveal">
+        <h3>Summary</h3>
+        <p>Placeholder summary — two or three sentences on your experience, focus areas, and what kind of work you're looking for next.</p>
+
+        <h3>Skills</h3>
+        <ul class="skill-list">
+          <li>JavaScript / TypeScript</li>
+          <li>React &amp; Node.js</li>
+          <li>Python</li>
+          <li>SQL &amp; NoSQL databases</li>
+          <li>Cloud (AWS / GCP)</li>
+          <li>Git &amp; CI/CD</li>
+        </ul>
+
+        <a href="assets/resume/resume.pdf" class="btn btn-primary" download>Download Résumé (PDF)</a>
+      </div>
+
+      <div class="resume-timeline">
+        <h3 class="reveal">Experience</h3>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-head">
+              <h4>Job Title</h4>
+              <span>2024 — Present</span>
+            </div>
+            <p class="timeline-org">Company Name</p>
+            <p>Brief description of responsibilities and impact. Quantify results where possible.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-head">
+              <h4>Job Title</h4>
+              <span>2022 — 2024</span>
+            </div>
+            <p class="timeline-org">Company Name</p>
+            <p>Brief description of responsibilities and impact. Quantify results where possible.</p>
+          </div>
+        </div>
+
+        <h3 class="reveal timeline-subhead">Education</h3>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-head">
+              <h4>Degree, Field of Study</h4>
+              <span>20XX — 20XX</span>
+            </div>
+            <p class="timeline-org">University Name</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact container">
+    <p class="reveal section-eyebrow">Get In Touch</p>
+    <h2 class="reveal section-title">Let's talk</h2>
+    <p class="reveal contact-text">Have a project in mind or just want to say hello? My inbox is open.</p>
+    <a href="mailto:louis.thin.contact@gmail.com" class="reveal contact-email">louis.thin.contact@gmail.com</a>
+
+    <div class="reveal hero-socials contact-socials">
+      <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.93c.58.1.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.87-1.54-3.87-1.54-.53-1.33-1.29-1.69-1.29-1.69-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.68 0-1.25.45-2.28 1.19-3.08-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.76.12 3.05.74.8 1.18 1.83 1.18 3.08 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.07.78 2.16 0 1.56-.02 2.82-.02 3.2 0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+      </a>
+      <a href="https://linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.15 1.45-2.15 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>&copy; <span id="year"></span> Louis T. Built with plain HTML, CSS &amp; JS.</p>
+    <a href="#home" class="back-top">Back to top ↑</a>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
