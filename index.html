@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Louis T. — Software Engineer</title>
-<meta name="description" content="Portfolio and resume of Louis T., software engineer.">
+<title data-i18n="meta.title">Louis T. — Data Engineer</title>
+<meta name="description" data-i18n="meta.description" content="Portfolio et CV de Louis T., data engineer.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -18,22 +18,25 @@
   <nav class="nav container">
     <a href="#home" class="logo">LT<span>.</span></a>
 
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+    <button class="nav-toggle" id="navToggle" aria-label="Basculer la navigation" data-i18n-aria="a11y.navToggle" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
 
     <ul class="nav-links" id="navLinks">
-      <li><a href="#home" class="nav-link active" data-nav>Home</a></li>
-      <li><a href="#projects" class="nav-link" data-nav>Projects</a></li>
-      <li><a href="#music" class="nav-link" data-nav>Music</a></li>
-      <li><a href="#resume" class="nav-link" data-nav>Resume</a></li>
-      <li><a href="#contact" class="nav-link" data-nav>Contact</a></li>
+      <li><a href="#home" class="nav-link active" data-nav data-i18n="nav.home">Accueil</a></li>
+      <li><a href="#projects" class="nav-link" data-nav data-i18n="nav.projects">Projets</a></li>
+      <li><a href="#resume" class="nav-link" data-nav data-i18n="nav.resume">CV</a></li>
+      <li><a href="#music" class="nav-link" data-nav data-i18n="nav.music">Musique</a></li>
+      <li><a href="#contact" class="nav-link" data-nav data-i18n="nav.contact">Contact</a></li>
     </ul>
 
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M4.6 4.6l1.7 1.7M17.7 17.7l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.6 19.4l1.7-1.7M17.7 6.3l1.7-1.7"/></svg>
-      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.6 6.6 0 0 0 10.5 10.5z"/></svg>
-    </button>
+    <div class="toggle-group">
+      <button class="lang-toggle" id="langToggle" aria-label="Switch to English">EN</button>
+      <button class="theme-toggle" id="themeToggle" aria-label="Basculer le mode sombre" data-i18n-aria="a11y.themeToggle">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M4.6 4.6l1.7 1.7M17.7 17.7l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.6 19.4l1.7-1.7M17.7 6.3l1.7-1.7"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.6 6.6 0 0 0 10.5 10.5z"/></svg>
+      </button>
+    </div>
   </nav>
 </header>
 
@@ -41,15 +44,13 @@
 
   <!-- HERO -->
   <section id="home" class="hero container">
-    <p class="reveal eyebrow">Bonjour, moi c'est</p>
+    <p class="reveal eyebrow" data-i18n="hero.eyebrow">Bonjour, moi c'est</p>
     <h1 class="reveal">Louis T.</h1>
     <h2 class="reveal hero-role">Data Engineer</h2>
-    <p class="reveal hero-text">
-      Je suis un jeune diplômé d'école d'ingénieur informatique à la recherche d'opportunités en tant que data engineer, pour débuter dés que possible
-    </p>
+    <p class="reveal hero-text" data-i18n="hero.bio">Je suis un jeune diplômé d'école d'ingénieur informatique à la recherche d'opportunités en tant que data engineer, pour débuter dès que possible.</p>
     <div class="reveal hero-actions">
-      <a href="#projects" class="btn btn-primary">View Projects</a>
-      <a href="assets/resume/resume.pdf" class="btn btn-ghost" download>Download Résumé</a>
+      <a href="#projects" class="btn btn-primary" data-i18n="hero.cta1">Voir mes projets</a>
+      <a href="assets/resume/resume.pdf" class="btn btn-ghost" download data-i18n="hero.cta2">Télécharger mon CV</a>
     </div>
     <div class="reveal hero-socials">
       <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub">
@@ -62,15 +63,15 @@
         <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="4.5" width="19" height="15" rx="2.2"/><path d="m3.5 6 8.5 7 8.5-7"/></svg>
       </a>
     </div>
-    <a href="#projects" class="scroll-cue" aria-label="Scroll to projects">
+    <a href="#projects" class="scroll-cue" aria-label="Voir les projets" data-i18n-aria="a11y.scrollNext">
       <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 4v16M5 13l7 7 7-7"/></svg>
     </a>
   </section>
 
   <!-- PROJECTS -->
   <section id="projects" class="projects container">
-    <p class="reveal section-eyebrow">Selected Work</p>
-    <h2 class="reveal section-title">Projects</h2>
+    <p class="reveal section-eyebrow" data-i18n="projects.eyebrow">Ce que j'ai construit</p>
+    <h2 class="reveal section-title" data-i18n="projects.title">Projets</h2>
 
     <div class="project-grid">
 
@@ -80,14 +81,13 @@
         </div>
         <div class="project-body">
           <h3>ATMOSFER</h3>
-          <p>Web app permettant de tracker les émissions de CO2 mondiales.
-            Granularité à l'année, au pays et au secteur d'activité.</p>
+          <p data-i18n="project1.desc">Web app permettant de tracker les émissions de CO2 mondiales. Granularité à l'année, au pays et au secteur d'activité.</p>
           <ul class="tags">
             <li>Python</li><li>PostgreSQL</li><li>dbt</li><li>Airflow</li>
           </ul>
           <div class="project-links">
-            <a href="#" target="_blank" rel="noopener">Live Demo →</a>
-            <a href="#" target="_blank" rel="noopener">Source →</a>
+            <a href="#" target="_blank" rel="noopener" data-i18n="projects.demo">Démo →</a>
+            <a href="#" target="_blank" rel="noopener" data-i18n="projects.source">Code →</a>
           </div>
         </div>
       </article>
@@ -97,14 +97,14 @@
           <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z"/></svg>
         </div>
         <div class="project-body">
-          <h3>Project Two</h3>
-          <p>A short, punchy description of what this project does and the problem it solves. Replace with your real project.</p>
+          <h3 data-i18n="project2.title">[Nom du projet]</h3>
+          <p data-i18n="project2.desc">[Décris le projet en 2-3 phrases : le problème résolu, ta stack, ce dont tu es fier.]</p>
           <ul class="tags">
-            <li>Python</li><li>FastAPI</li><li>Docker</li>
+            <li>SQL</li><li>Airflow</li>
           </ul>
           <div class="project-links">
-            <a href="#" target="_blank" rel="noopener">Live Demo →</a>
-            <a href="#" target="_blank" rel="noopener">Source →</a>
+            <a href="#" target="_blank" rel="noopener" data-i18n="projects.demo">Démo →</a>
+            <a href="#" target="_blank" rel="noopener" data-i18n="projects.source">Code →</a>
           </div>
         </div>
       </article>
@@ -114,14 +114,14 @@
           <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
         </div>
         <div class="project-body">
-          <h3>Project Three</h3>
-          <p>A short, punchy description of what this project does and the problem it solves. Replace with your real project.</p>
+          <h3 data-i18n="project3.title">[Nom du projet]</h3>
+          <p data-i18n="project3.desc">[Décris le projet en 2-3 phrases : le problème résolu, ta stack, ce dont tu es fier.]</p>
           <ul class="tags">
-            <li>TypeScript</li><li>Next.js</li><li>AWS</li>
+            <li>dbt</li><li>BigQuery</li>
           </ul>
           <div class="project-links">
-            <a href="#" target="_blank" rel="noopener">Live Demo →</a>
-            <a href="#" target="_blank" rel="noopener">Source →</a>
+            <a href="#" target="_blank" rel="noopener" data-i18n="projects.demo">Démo →</a>
+            <a href="#" target="_blank" rel="noopener" data-i18n="projects.source">Code →</a>
           </div>
         </div>
       </article>
@@ -131,14 +131,14 @@
           <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19V5a2 2 0 0 1 2-2h9l5 5v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"/><path d="M14 3v5h5"/></svg>
         </div>
         <div class="project-body">
-          <h3>Project Four</h3>
-          <p>A short, punchy description of what this project does and the problem it solves. Replace with your real project.</p>
+          <h3 data-i18n="project4.title">[Nom du projet]</h3>
+          <p data-i18n="project4.desc">[Décris le projet en 2-3 phrases : le problème résolu, ta stack, ce dont tu es fier.]</p>
           <ul class="tags">
-            <li>Go</li><li>Redis</li><li>gRPC</li>
+            <li>Docker</li><li>Kafka</li>
           </ul>
           <div class="project-links">
-            <a href="#" target="_blank" rel="noopener">Live Demo →</a>
-            <a href="#" target="_blank" rel="noopener">Source →</a>
+            <a href="#" target="_blank" rel="noopener" data-i18n="projects.demo">Démo →</a>
+            <a href="#" target="_blank" rel="noopener" data-i18n="projects.source">Code →</a>
           </div>
         </div>
       </article>
@@ -146,82 +146,77 @@
     </div>
   </section>
 
+  <!-- RESUME -->
+  <section id="resume" class="resume container">
+    <p class="reveal section-eyebrow" data-i18n="resume.eyebrow">Parcours</p>
+    <h2 class="reveal section-title" data-i18n="resume.title">CV</h2>
+
+    <div class="resume-layout">
+      <aside class="resume-aside reveal">
+        <h3 data-i18n="resume.aboutHeading">À propos</h3>
+        <p data-i18n="resume.aboutText">Formation ingénieur informatique, spécialisation données. Ce qui m'intéresse : prendre des données brutes et moches, et en sortir quelque chose d'exploitable — pipelines, modèles, tableaux de bord.</p>
+
+        <h3 data-i18n="resume.skillsHeading">Compétences</h3>
+        <ul class="skill-tags">
+          <li>Python</li>
+          <li>SQL</li>
+          <li>Airflow</li>
+          <li>dbt</li>
+          <li>PostgreSQL</li>
+          <li>Docker</li>
+          <li>Cloud (AWS / GCP)</li>
+          <li>Git</li>
+        </ul>
+
+        <a href="assets/resume/resume.pdf" class="btn btn-primary" download data-i18n="resume.downloadBtn">Télécharger le CV (PDF)</a>
+      </aside>
+
+      <div class="resume-main">
+        <h3 class="reveal" data-i18n="resume.experienceHeading">Expérience</h3>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-head">
+              <h4 data-i18n="job1.title">[Intitulé du poste]</h4>
+              <span class="timeline-date">20XX — 20XX</span>
+            </div>
+            <p class="timeline-org" data-i18n="job1.company">[Nom de l'entreprise]</p>
+            <p data-i18n="job1.desc">[Décris ici ta mission : les outils utilisés, ce que tu as construit, un résultat chiffré si possible.]</p>
+          </div>
+        </div>
+
+        <h3 class="reveal timeline-subhead" data-i18n="resume.educationHeading">Formation</h3>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-head">
+              <h4 data-i18n="edu1.degree">Diplôme d'ingénieur — Informatique</h4>
+              <span class="timeline-date">20XX — 20XX</span>
+            </div>
+            <p class="timeline-org" data-i18n="edu1.school">[Nom de l'école]</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- MUSIC -->
   <section id="music" class="music container">
-    <p class="reveal section-eyebrow">Off Screen</p>
-    <h2 class="reveal section-title">Music</h2>
+    <p class="reveal section-eyebrow" data-i18n="music.eyebrow">En dehors du code</p>
+    <h2 class="reveal section-title" data-i18n="music.title">Musique</h2>
+    <p class="reveal music-intro" data-i18n="music.intro">Le reste du temps, j'écris et j'enregistre sous le nom Louis Thin.</p>
     <div class="reveal music-embed">
       <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/artist/7L0fp9WNTj8WCSdg3jXWl4?utm_source=generator&si=d74e03dcffb44053" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </div>
   </section>
 
-  <!-- RESUME -->
-  <section id="resume" class="resume container">
-    <p class="reveal section-eyebrow">Background</p>
-    <h2 class="reveal section-title">Résumé</h2>
-
-    <div class="resume-col">
-      <div class="reveal resume-summary">
-        <h3>Summary</h3>
-        <p>Placeholder summary — two or three sentences on your experience, focus areas, and what kind of work you're looking for next.</p>
-      </div>
-
-      <div class="reveal resume-summary">
-        <h3>Skills</h3>
-        <ul class="skill-tags">
-          <li>JavaScript / TypeScript</li>
-          <li>React &amp; Node.js</li>
-          <li>Python</li>
-          <li>SQL &amp; NoSQL databases</li>
-          <li>Cloud (AWS / GCP)</li>
-          <li>Git &amp; CI/CD</li>
-        </ul>
-      </div>
-
-      <a href="assets/resume/resume.pdf" class="btn btn-primary reveal" download>Download Résumé (PDF)</a>
-
-      <div class="resume-timeline">
-        <h3 class="reveal">Experience</h3>
-
-        <div class="timeline-item reveal">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <h4>Job Title</h4>
-            <span class="timeline-date">2024 — Present</span>
-            <p class="timeline-org">Company Name</p>
-            <p>Brief description of responsibilities and impact. Quantify results where possible.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item reveal">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <h4>Job Title</h4>
-            <span class="timeline-date">2022 — 2024</span>
-            <p class="timeline-org">Company Name</p>
-            <p>Brief description of responsibilities and impact. Quantify results where possible.</p>
-          </div>
-        </div>
-
-        <h3 class="reveal timeline-subhead">Education</h3>
-
-        <div class="timeline-item reveal">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <h4>Degree, Field of Study</h4>
-            <span class="timeline-date">20XX — 20XX</span>
-            <p class="timeline-org">University Name</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- CONTACT -->
   <section id="contact" class="contact container">
-    <p class="reveal section-eyebrow">Get In Touch</p>
-    <h2 class="reveal section-title">Let's talk</h2>
-    <p class="reveal contact-text">Have a project in mind or just want to say hello? My inbox is open.</p>
+    <p class="reveal section-eyebrow" data-i18n="contact.eyebrow">Contact</p>
+    <h2 class="reveal section-title" data-i18n="contact.title">On en discute ?</h2>
+    <p class="reveal contact-text" data-i18n="contact.text">Une opportunité data engineer, une question, ou juste envie de dire bonjour : mon inbox est ouverte.</p>
     <a href="mailto:louis.thin.contact@gmail.com" class="reveal contact-email">louis.thin.contact@gmail.com</a>
 
     <div class="reveal hero-socials contact-socials">
@@ -238,8 +233,8 @@
 
 <footer class="site-footer">
   <div class="container footer-inner">
-    <p>&copy; <span id="year"></span> Louis T. Built with plain HTML, CSS &amp; JS.</p>
-    <a href="#home" class="back-top">Back to top ↑</a>
+    <p>&copy; <span id="year"></span> Louis T. — <span data-i18n="footer.text">Fait main en HTML, CSS et JS.</span></p>
+    <a href="#home" class="back-top" data-i18n="footer.backTop">Retour en haut ↑</a>
   </div>
 </footer>
 
