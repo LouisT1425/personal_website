@@ -1,43 +1,46 @@
-# Portfolio Site
+# Site personnel
 
-A simple, sleek personal site: hero intro, project showcase, a two-column CV-style résumé, music (Spotify embed), and contact section. Bilingual (French default, English toggle). Plain HTML/CSS/JS — no build step, no dependencies. Warm cream color palette (with a matching dark mode), Fraunces + Inter type.
+Mon portfolio : présentation, projets, CV, musique et contact. Le site est écrit en HTML, CSS et JavaScript, sans framework ni étape de build. Il est en français par défaut, avec une version anglaise.
 
-## Structure
+## Arborescence
 
 ```
-index.html              Page content + data-i18n keys (all sections)
-assets/css/style.css    Styles, theme tokens, layout, animations
-assets/js/main.js       Translations dict, language toggle, theme toggle, mobile nav, scroll reveal
-assets/resume/resume.pdf  Placeholder résumé served by the "Download" buttons
+index.html               contenu de la page
+assets/css/style.css     styles, thèmes clair et sombre, mode dyslexie
+assets/js/main.js        textes FR/EN, bascules (langue, thème, dyslexie), menu mobile
+assets/pictures/         visuels des projets
+assets/resume/           CV en PDF
 ```
 
-## Bilingual content (FR/EN)
+## Textes FR/EN
 
-All visible text is driven by `data-i18n="key"` attributes in `index.html`, resolved against the `translations` object at the top of `assets/js/main.js` (a `fr` and an `en` dict, keyed the same way). The `EN`/`FR` button in the header (next to the dark-mode toggle) swaps the whole page and persists the choice in `localStorage`.
+Les textes sont dans l'objet `translations` en haut de `main.js`. Dans `index.html`, chaque élément traduisible porte un attribut `data-i18n` qui renvoie à une clé de ce dictionnaire.
 
-**Important:** `applyLanguage()` runs on every page load and overwrites the text of every `data-i18n` element with whatever is in the dict — so if you edit copy directly in `index.html` without also updating `translations.fr[key]` in `main.js`, your change will render for a split second and then get silently reverted to the stale dict value. Always change the string in **both** places (the HTML default text and `translations.fr[key]` / `translations.en[key]`).
+`applyLanguage()` s'exécute à chaque chargement et remplace le texte de ces éléments par la valeur du dictionnaire. Si je modifie un texte dans le HTML sans toucher au dictionnaire, il s'affiche une fraction de seconde puis revient à l'ancienne valeur. Je change donc toujours les deux, en français et en anglais.
 
-## Customize
+## Ce que fait le site
 
-- **Name, bio, socials:** hero section in `index.html` + matching `hero.*` keys in `main.js`.
-- **Projects:** duplicate a `.project-card` block in `#projects` for more cards; the grid auto-centers whether there's 1 or several.
-- **Résumé:** two-column layout — `.resume-aside` (about + skills) on the left, `.resume-main` (experience/education timeline) on the right. Each entry has matching `jobN.*` / `edu1.*` keys (including `jobN.dates`, so month names switch with the language too).
-- **Résumé file:** replace `assets/resume/resume.pdf` with your real exported PDF.
-- **Music:** the `#music` section embeds a Spotify artist profile via iframe — swap the `src` URL for a different artist/playlist/track.
-- **Accent color:** `--accent` / `--accent-soft` in `assets/css/style.css` (separate light/dark values).
-- **Contact:** update the `mailto:` and social `href`s in the `#contact` section.
-- **Buttons:** kept intentionally minimal — one solid `.btn.btn-primary` per section at most, everything else is a `.btn-link` (underlined text) or a plain arrow link like the project card links.
+- thème clair ou sombre, qui suit le réglage du système et se mémorise
+- mode dyslexie (police OpenDyslexic, interlignage et espacement des mots élargis)
+- choix de la langue mémorisé dans le navigateur
+- adresse e-mail copiable en un clic
 
-## Run locally
+## Modifier le contenu
 
-No build step needed — just serve the folder:
+- **Projets** : dupliquer un bloc `.project-card` dans `#projects`.
+- **ATMOSFER** : le site n'est plus en ligne, la carte renvoie seulement vers le code sur GitHub.
+- **CV** : remplacer le PDF dans `assets/resume/` et mettre à jour les deux liens de téléchargement dans `index.html`.
+- **Musique** : changer l'URL de l'iframe Spotify dans `#music`.
+- **Couleurs et polices** : variables en haut de `style.css`.
+
+## Lancer en local
 
 ```
 python3 -m http.server 8000
 ```
 
-Then open `http://localhost:8000`.
+Puis ouvrir `http://localhost:8000`.
 
-## Deploy
+## Déploiement
 
-Static, so it works as-is on GitHub Pages, Netlify, Vercel, or Cloudflare Pages — point them at this folder, no build command required.
+Le site est statique et hébergé sur Vercel, relié à ce dépôt : un push sur la branche principale le redéploie. Aucune commande de build n'est nécessaire.

@@ -3,18 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title data-i18n="meta.title">Louis Thin — Data Engineer</title>
-<meta name="description" data-i18n="meta.description" content="Mon portfolio et mon CV.">
+<title data-i18n="meta.title">Louis Thin | Data Analyst</title>
+<meta name="description" data-i18n="meta.description" content="Portfolio et CV de Louis Thin, ingénieur diplômé en IA et génie logiciel, à la recherche d&#x27;un poste de data analyst ou de business analyst en Île-de-France.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
 <header class="site-header" id="siteHeader">
   <nav class="nav container">
-    <a href="#home" class="logo"></a>
+    <a href="#home" class="logo">Louis Thin</a>
 
     <button class="nav-toggle" id="navToggle" aria-label="Basculer la navigation" data-i18n-aria="a11y.navToggle" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -41,17 +41,15 @@
 
 <main>
 
-  <!-- HERO -->
   <section id="home" class="hero container">
-    <p class="reveal eyebrow" data-i18n="hero.eyebrow">Bonjour, moi c'est</p>
-    <h1 class="reveal">Louis Thin</h1>
-    <h2 class="reveal hero-role">Data Engineer</h2>
-    <p class="reveal hero-text" data-i18n="hero.bio">Jeune ingénieur fraîchement diplômé, spécialisé en intelligence artificielle et génie logiciel. Je recherche une opportunité de data engineer, avec une prise de poste envisagée en septembre 2026.</p>
-    <div class="reveal hero-actions">
+    <h1>Louis Thin</h1>
+    <p class="hero-role">Data Analyst / Business Analyst</p>
+    <p class="hero-text" data-i18n="hero.bio">Ingénieur diplômé en IA et génie logiciel. Chez Safran Aircraft Engines, j&#x27;ai défini les KPI et construit le rapport Power BI qui ont fait passer le taux de validation de 33 % à 50 %. Je cherche un poste de data analyst ou de business analyst en Île-de-France.</p>
+    <div class="hero-actions">
       <a href="#projects" class="btn btn-primary" data-i18n="hero.cta1">Voir mes projets</a>
-      <a href="assets/resume/resume.pdf" class="btn-link" download data-i18n="hero.cta2">Télécharger mon CV</a>
+      <a href="assets/resume/CV-Louis_Thin-Data-Analyst.pdf" class="btn-link" download data-i18n="hero.cta2">Télécharger mon CV</a>
     </div>
-    <div class="reveal hero-socials">
+    <div class="hero-socials">
       <a href="https://github.com/LouisT1425" target="_blank" rel="noopener" aria-label="GitHub">
         <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.93c.58.1.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.87-1.54-3.87-1.54-.53-1.33-1.29-1.69-1.29-1.69-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.68 0-1.25.45-2.28 1.19-3.08-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.76.12 3.05.74.8 1.18 1.83 1.18 3.08 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.07.78 2.16 0 1.56-.02 2.82-.02 3.2 0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
       </a>
@@ -64,141 +62,76 @@
     </div>
   </section>
 
-  <!-- PROJECTS -->
   <section id="projects" class="projects container">
-    <p class="reveal section-eyebrow" data-i18n="projects.eyebrow">Ce que j'ai construit</p>
-    <h2 class="reveal section-title" data-i18n="projects.title">Projets</h2>
-
+    <h2 class="section-title" data-i18n="projects.title">Projets</h2>
     <div class="project-grid">
-
-      <article class="project-card reveal">
+      <article class="project-card">
         <img class="project-thumb" src="assets/pictures/atmosfer_logo.jpg" alt="" aria-hidden="true">
         <div class="project-body">
           <h3>ATMOSFER</h3>
-          <p data-i18n="project1.desc">Application web permettant de suivre les émissions mondiales de CO2, avec une granularité par année, par pays et par secteur d'activité.</p>
-          <ul class="tags">
-            <li>Python</li><li>PostgreSQL</li><li>dbt</li><li>Airflow</li>
-          </ul>
+          <p data-i18n="project1.desc">Pipeline ELT sur les données World Bank Open Data (PostgreSQL, dbt, Airflow), exposé par une API FastAPI et un front React. Il répond à quatre questions : pays les plus émetteurs, comparaison entre pays, secteurs les plus émetteurs, émissions par habitant.</p>
+          <ul class="tags"><li>PostgreSQL</li><li>dbt</li><li>Airflow</li><li>FastAPI</li><li>React</li></ul>
           <div class="project-links">
-            <a href="https://atmosfer.louisthin.dev" target="_blank" rel="noopener" data-i18n="projects.demo">Visiter le site →</a>
-            <a href="https://github.com/LouisT1425/ATMOSFER" target="_blank" rel="noopener" data-i18n="projects.source">Code →</a>
+            <span class="project-offline" data-i18n="projects.offline">Le site n&#x27;est plus disponible</span>
+            <a href="https://github.com/LouisT1425/ATMOSFER" target="_blank" rel="noopener" data-i18n="projects.source">Code source</a>
           </div>
         </div>
       </article>
-
     </div>
   </section>
 
-  <!-- RESUME -->
   <section id="resume" class="resume container">
-    <p class="reveal section-eyebrow" data-i18n="resume.eyebrow">Parcours</p>
-    <h2 class="reveal section-title" data-i18n="resume.title">CV</h2>
-
+    <h2 class="section-title" data-i18n="resume.title">CV</h2>
     <div class="resume-layout">
-      <aside class="resume-aside reveal">
+      <aside class="resume-aside">
         <h3 data-i18n="resume.aboutHeading">À propos</h3>
-        <p data-i18n="resume.aboutText">Ingénieur diplômé de Polytech Dijon, spécialisation Intelligence Artificielle et Génie Logiciel. Ce qui m'intéresse : prendre des données brutes et en sortir quelque chose d'exploitable — pipelines ETL, modèles de machine learning, tableaux de bord.</p>
-
+        <p data-i18n="resume.aboutText">Ingénieur diplômé de Polytech Dijon, spécialisation intelligence artificielle et génie logiciel. J&#x27;aime partir d&#x27;une question métier, trouver les bonnes données et en sortir des indicateurs que les équipes utilisent vraiment.</p>
         <h3 data-i18n="resume.skillsHeading">Compétences</h3>
         <ul class="skill-tags">
-          <li data-i18n="skill1">Python (pandas, scikit-learn, FastAPI)</li>
-          <li data-i18n="skill2">SQL (SQLite, PostgreSQL)</li>
-          <li data-i18n="skill3">Data Engineering (Airflow, dbt)</li>
-          <li data-i18n="skill4">IA (Machine Learning, NLP)</li>
-          <li data-i18n="skill5">Power BI / DAX</li>
-          <li data-i18n="skill6">Git / GitHub</li>
+          <li>SQL (PostgreSQL, SQLite)</li><li>Power BI (DAX, modèle en étoile)</li><li>Excel</li>
+          <li>Python (pandas, Jupyter)</li><li>dbt, Airflow</li><li>Machine learning (scikit-learn, YOLOv11)</li><li>Git / GitHub</li>
         </ul>
-
-        <a href="assets/resume/resume.pdf" class="btn btn-primary" download data-i18n="resume.downloadBtn">Télécharger le CV (PDF)</a>
+        <a href="assets/resume/CV-Louis_Thin-Data-Analyst.pdf" class="btn btn-primary" download data-i18n="resume.downloadBtn">Télécharger le CV (PDF)</a>
       </aside>
-
       <div class="resume-main">
-        <h3 class="reveal" data-i18n="resume.experienceHeading">Expérience</h3>
-
-        <div class="timeline-item reveal">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="timeline-head">
-              <h4 data-i18n="job1.title">Data Engineer — Stage de fin d'études</h4>
-              <span class="timeline-date" data-i18n="job1.dates">Février 2026 - Août 2026</span>
-            </div>
-            <p class="timeline-org" data-i18n="job1.company">Safran Aircraft Engines</p>
-            <ul data-i18n="job1.desc" class="timeline-list">
-              <li>Construction de pipelines ETL (sources NAS et API REST : fichiers .csv, .txt, .xlsx, bases SQLite) en Python, avec nettoyage et transformation des données.</li>
-              <li>Réalisation de dashboards Power BI (modèle en étoile, mesures DAX) à destination du management, utilisés lors des comités de pilotage (COPIL).</li>
-              <li>Fine-tuning d'un modèle XLM-RoBERTa (recherche par grille, validation croisée k-fold) pour la classification NLP de documentation technique.</li>
-              <li>Résultat : amélioration d'un KPI majeur de 33 % à 50 %.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="timeline-item reveal">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="timeline-head">
-              <h4 data-i18n="job2.title">Stage NLP / Machine Learning</h4>
-              <span class="timeline-date" data-i18n="job2.dates">Octobre 2025 - Janvier 2026</span>
-            </div>
-            <p class="timeline-org" data-i18n="job2.company">Institut Agro Dijon</p>
-            <p data-i18n="job2.desc">Étude de faisabilité en NLP et Machine Learning.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item reveal">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="timeline-head">
-              <h4 data-i18n="job3.title">Stage Computer Vision</h4>
-              <span class="timeline-date" data-i18n="job3.dates">Avril 2025 - Août 2025</span>
-            </div>
-            <p class="timeline-org" data-i18n="job3.company">King Mongkut's University of Technology North Bangkok, Thaïlande</p>
-            <p data-i18n="job3.desc">Développement d'un système de détection d'objets par vision par ordinateur, à l'aide du modèle YOLO.</p>
-          </div>
-        </div>
-
-        <h3 class="reveal timeline-subhead" data-i18n="resume.educationHeading">Formation</h3>
-
-        <div class="timeline-item reveal">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="timeline-head">
-              <h4 data-i18n="edu1.degree">Diplôme d'ingénieur — Intelligence Artificielle et Génie Logiciel</h4>
-              <span class="timeline-date">2021 — 2026</span>
-            </div>
-            <p class="timeline-org" data-i18n="edu1.school">Polytech Dijon</p>
-          </div>
-        </div>
+        <h3 data-i18n="resume.experienceHeading">Expérience</h3>
+        <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content">
+<div class="timeline-head"><h4 data-i18n="job1.title">Stage de fin d&#x27;études, analyse de données</h4><span class="timeline-date" data-i18n="job1.dates">Février 2026 - Août 2026</span></div>
+<p class="timeline-org" data-i18n="job1.company">Safran Aircraft Engines</p><ul class="timeline-list" data-i18n="job1.desc"><li>Analyse de 800 dossiers (chacun une mise à jour de manuel de maintenance) et définition des KPI de suivi : taux de validation passé de 33 % à 50 %.</li><li>Rapport Power BI de 8 pages (modèle en étoile, DAX) pour les managers, les COPIL et les audits qualité : Pareto, filtres par moteur, personne, manuel et action, suivi des actions métier relié à l&#x27;outil de ticketing.</li><li>Collecte quotidienne de 3 sources (SQLite, CSV/XLSX, API REST ; environ 800 lignes × 15 colonnes) automatisée en Python (pandas), lancée par le Planificateur de tâches Windows sur une machine virtuelle et historisée dans SQLite. Elle a contribué à réduire d&#x27;environ 20 % la charge de travail de l&#x27;équipe.</li></ul></div></div>
+        <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content">
+<div class="timeline-head"><h4 data-i18n="job2.title">Stage international, Computer Vision et analyse de données</h4><span class="timeline-date" data-i18n="job2.dates">Avril 2025 - Août 2025</span></div>
+<p class="timeline-org" data-i18n="job2.company">KMUTNB, Bangkok, Thaïlande</p><ul class="timeline-list" data-i18n="job2.desc"><li>Évaluation de modèles YOLOv11 sur deux cas agricoles, le suivi de plants de riz (250 images, 2 classes) et la détection d&#x27;animaux (vache, cheval, cochon, chien, chèvre), avec précision, rappel, mAP et matrices de confusion.</li><li>Graphiques et tableaux de synthèse en Python, présentés lors de points mensuels avec les équipes métier.</li><li>Comparaison de plusieurs modèles et configurations selon la qualité de détection et le coût d&#x27;inférence, pour un robot rizicole et une caméra fixe en pâturage.</li></ul></div></div>
+        <h3 class="timeline-subhead" data-i18n="resume.engagementHeading">Engagement</h3>
+        <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content">
+<div class="timeline-head"><h4 data-i18n="gala.title">Responsable musique</h4><span class="timeline-date" data-i18n="gala.dates">Juillet 2025 - Février 2026</span></div>
+<p class="timeline-org" data-i18n="gala.company">Gala Polytech Dijon</p><ul class="timeline-list" data-i18n="gala.desc"><li>Pilotage d&#x27;un gala de 4 h devant plus de 300 spectateurs : équipe de 6, 40 musiciens, budget de 30 000 €, prestataires son et lumière.</li></ul></div></div>
+        <h3 class="timeline-subhead" data-i18n="resume.educationHeading">Formation</h3>
+        <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content">
+<div class="timeline-head"><h4 data-i18n="edu1.degree">Diplôme d&#x27;ingénieur, Intelligence Artificielle et Génie Logiciel</h4><span class="timeline-date">2021 - 2026</span></div>
+<p class="timeline-org" data-i18n="edu1.school">Polytech Dijon</p></div></div>
       </div>
     </div>
   </section>
 
-  <!-- MUSIC -->
   <section id="music" class="music container">
-    <p class="reveal section-eyebrow" data-i18n="music.eyebrow">En dehors du code</p>
-    <h2 class="reveal section-title" data-i18n="music.title">Musique</h2>
-    <p class="reveal music-intro" data-i18n="music.intro">Le reste du temps, j'écris et j'enregistre sous le nom Louis Thin. (Disponible aussi sur Deezer, Apple Music ...)</p>
-    <div class="reveal music-embed">
-      <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/artist/7L0fp9WNTj8WCSdg3jXWl4?utm_source=generator&theme=0&si=2d9f9dd1fdb547bc" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-    </div>
+    <h2 class="section-title" data-i18n="music.title">Musique</h2>
+    <p class="music-intro" data-i18n="music.intro">Le reste du temps, j&#x27;écris et j&#x27;enregistre sous le nom Louis Thin. Mes morceaux sont aussi sur Deezer, Apple Music et d&#x27;autres plateformes.</p>
+    <div class="music-embed"><iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/artist/7L0fp9WNTj8WCSdg3jXWl4?utm_source=generator&theme=0&si=2d9f9dd1fdb547bc" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
   </section>
 
-  <!-- CONTACT -->
   <section id="contact" class="contact container">
-    <p class="reveal section-eyebrow" data-i18n="contact.eyebrow">Contact</p>
-    <h2 class="reveal section-title" data-i18n="contact.title">On en discute ?</h2>
-    <p class="reveal contact-text" data-i18n="contact.text">Une opportunité de data engineer, une question, ou simplement l'envie de dire bonjour : ma boîte mail est ouverte.</p>
-    <a href="#" class="reveal contact-email copy-email"
-   data-email="thin.louis1425@hotmail.com"
-   title="Cliquer pour copier dans le presse-papier" data-i18n-title="a11y.copyEmailTitle">
-    thin.louis1425@hotmail.com
-    </a>
-
-    <div class="reveal hero-socials contact-socials">
+    <h2 class="section-title" data-i18n="contact.title">Contact</h2>
+    <p class="contact-text" data-i18n="contact.text">Pour un poste, une question ou un échange, le plus simple est de m&#x27;écrire.</p>
+    <a href="#" class="contact-email copy-email" data-email="thin.louis1425@hotmail.com" title="Cliquer pour copier dans le presse-papier" data-i18n-title="a11y.copyEmailTitle">thin.louis1425@hotmail.com</a>
+    <div class="hero-socials">
       <a href="https://github.com/LouisT1425" target="_blank" rel="noopener" aria-label="GitHub">
         <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.93c.58.1.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.87-1.54-3.87-1.54-.53-1.33-1.29-1.69-1.29-1.69-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.68 0-1.25.45-2.28 1.19-3.08-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.76.12 3.05.74.8 1.18 1.83 1.18 3.08 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.07.78 2.16 0 1.56-.02 2.82-.02 3.2 0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
       </a>
       <a href="https://www.linkedin.com/in/louis-thin/" target="_blank" rel="noopener" aria-label="LinkedIn">
         <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.15 1.45-2.15 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>
+      </a>
+      <a href="#" class="copy-email" data-email="thin.louis1425@hotmail.com" aria-label="Copier l'adresse e-mail" data-i18n-aria="a11y.copyEmailLabel" title="Cliquer pour copier dans le presse-papier" data-i18n-title="a11y.copyEmailTitle">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="4.5" width="19" height="15" rx="2.2"/><path d="m3.5 6 8.5 7 8.5-7"/></svg>
       </a>
     </div>
   </section>
@@ -207,8 +140,8 @@
 
 <footer class="site-footer">
   <div class="container footer-inner">
-    <p>&copy; <span id="year"></span> Louis Thin — <span data-i18n="footer.text">Fait en HTML, CSS et JS.</span></p>
-    <a href="#home" class="back-top" data-i18n="footer.backTop">Retour en haut ↑</a>
+    <p>&copy; <span id="year"></span> Louis Thin. <span data-i18n="footer.text">Site écrit à la main en HTML, CSS et JavaScript.</span></p>
+    <a href="#home" class="back-top" data-i18n="footer.backTop">Haut de page</a>
   </div>
 </footer>
 
